@@ -1,8 +1,11 @@
 import HeroCarousel from './HeroCarousel';
+import OpeningHoursSection from './OpeningHoursSection';
+import ImplementationSection from './ImplementationSection';
+import QuestionsContactSection from './QuestionsContactSection';
 
 export default function Home() {
     return (
-        <main className="w-full min-h-screen bg-white text-zinc-900">
+        <main className="w-full min-h-screen bg-white text-zinc-900 pt-20">
             {/* Animated Hero Carousel Banner */}
             <HeroCarousel />
 
@@ -50,6 +53,15 @@ export default function Home() {
 
                 </div>
             </section>
+
+            {/* Opening Hours & Before/After Comparison Section */}
+            <OpeningHoursSection />
+
+            {/* Implementation Section with Watermark & Workshop Image Slider */}
+            <ImplementationSection />
+
+            {/* Questions & Location Contact Section */}
+            <QuestionsContactSection />
         </main>
     );
 }

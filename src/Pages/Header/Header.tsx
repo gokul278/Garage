@@ -34,8 +34,8 @@ export default function Header() {
     };
 
     return (
-        <header className={`sticky top-0 transition-all duration-300 z-50 border-b ${isScrolled
-            ? 'bg-zinc-100/75 backdrop-blur-md border-zinc-200/80 text-zinc-900 shadow-md'
+        <header className={`fixed top-0 left-0 right-0 w-full transition-all duration-300 z-50 border-b ${isScrolled
+            ? 'bg-zinc-100/90 backdrop-blur-md border-zinc-200/80 text-zinc-900 shadow-md'
             : 'bg-black border-gray-800 text-white'
             }`}>
             {/* Header Content Wrapper */}
@@ -44,7 +44,7 @@ export default function Header() {
                 <div className="flex items-center">
                     <Link to="/home" className="flex items-center">
                         <img
-                            src={isScrolled ? logoWhite : logoImg}
+                            src={!isScrolled ? logoImg : logoWhite}
                             alt="S&W Garage Logo"
                             className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-all duration-300"
                         />
@@ -58,12 +58,11 @@ export default function Header() {
                             key={link.name}
                             to={link.path}
                             className={({ isActive }) =>
-                                `relative flex items-center px-4 font-saira text-lg font-normal tracking-wider transition-colors duration-200 h-full border-b-4 ${
-                                    isActive || (link.path === '/home' && window.location.pathname === '/')
-                                        ? 'text-[#e50914] border-[#e50914]'
-                                        : isScrolled
-                                            ? 'text-zinc-900 border-transparent hover:text-[#e50914] hover:border-zinc-300'
-                                            : 'text-white border-transparent hover:text-[#e50914] hover:border-gray-700'
+                                `relative flex items-center px-4 font-saira text-lg font-normal tracking-wider transition-colors duration-200 h-full border-b-4 ${isActive || (link.path === '/home' && window.location.pathname === '/')
+                                    ? 'text-[#e50914] border-[#e50914]'
+                                    : isScrolled
+                                        ? 'text-zinc-900 border-transparent hover:text-[#e50914] hover:border-zinc-300'
+                                        : 'text-white border-transparent hover:text-[#e50914] hover:border-gray-700'
                                 }`
                             }
                         >
@@ -77,7 +76,10 @@ export default function Header() {
                     <button
                         onClick={toggleSidebar}
                         type="button"
-                        className="inline-flex items-center justify-center p-2 rounded-md text-red-600 hover:text-red-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-600 transition-colors duration-200"
+                        className={`inline-flex items-center justify-center p-2 rounded-md transition-colors duration-200 ${isScrolled
+                                ? 'text-red-600 hover:bg-zinc-200/60'
+                                : 'text-white hover:bg-zinc-800'
+                            } focus:outline-none focus:ring-2 focus:ring-inset focus:ring-red-600`}
                         aria-expanded={isSidebarOpen}
                     >
                         <span className="sr-only">Open main menu</span>
