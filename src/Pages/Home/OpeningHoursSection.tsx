@@ -9,7 +9,7 @@ export default function OpeningHoursSection() {
 
                 {/* Left Column: Opening Hours & Notice */}
                 <div className="lg:col-span-6 space-y-6 flex flex-col items-center lg:items-start text-center lg:text-left">
-                    <h2 className="text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-white tracking-tight leading-none">
+                    <h2 className="text-3xl sm:text-4xl lg:text-[3.75rem] font-bold text-white tracking-tight leading-none">
                         Opening hours
                     </h2>
 

@@ -8,4 +8,43 @@
 html,
 body {
     font-family: var(--font-saira);
+    scroll-behavior: smooth;
+}
+
+/* Next Level Page Transition Animations */
+@keyframes curtainSwipe {
+    0% {
+        transform: translateY(-100%);
+    }
+    45% {
+        transform: translateY(0%);
+    }
+    55% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}
+
+@keyframes nextLevelPageEnter {
+    0% {
+        opacity: 0;
+        transform: scale(0.98) translateY(18px);
+        filter: blur(8px);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        filter: blur(0px);
+    }
+}
+
+.animate-curtain-swipe {
+    animation: curtainSwipe 0.75s cubic-bezier(0.76, 0, 0.24, 1) forwards;
+}
+
+.animate-next-level-enter {
+    animation: nextLevelPageEnter 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.15s forwards;
+    opacity: 0;
 }

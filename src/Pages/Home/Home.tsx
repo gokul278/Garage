@@ -10,7 +10,7 @@ export default function Home() {
             <HeroCarousel />
 
             {/* What is a Do-It-Yourself Garage Section */}
-            <section className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-20 py-16 sm:py-24">
+            <section className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 py-16 sm:py-24">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
                     {/* Left Column - Headline & Titles */}
@@ -21,7 +21,7 @@ export default function Home() {
                         </h3>
 
                         {/* Main Headline with Highlighted Red Text */}
-                        <h2 className="text-slate-900 tracking-wider font-saira font-black text-3xl sm:text-4xl lg:text-[2.75rem] leading-[1.15] tracking-tight">
+                        <h2 className="text-[#003D58] tracking-wider font-saira font-black text-3xl sm:text-4xl lg:text-[3.00rem] leading-[1.15] tracking-tight">
                             It's simple: You want to work on your vehicle. We have the{' '}
                             <span className="text-red-600">professional equipment.</span>
                         </h2>

@@ -3,7 +3,7 @@ import logoImg from '../../assets/Logo/Logo.png';
 export default function QuestionsContactSection() {
     return (
         <section className="w-full bg-white text-zinc-900 pt-6 sm:pt-8 pb-16 sm:pb-24 font-saira">
-            <div className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-20">
+            <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 
                     {/* Left Column: Questions & Phone */}
@@ -14,7 +14,7 @@ export default function QuestionsContactSection() {
                         </h3>
 
                         {/* Main Title */}
-                        <h2 className="text-slate-900 tracking-wider font-saira font-black text-3xl sm:text-4xl lg:text-[2.75rem] leading-[1.15] tracking-tight">
+                        <h2 className="text-[#003D58] tracking-wider font-saira font-black text-3xl sm:text-4xl lg:text-[2.75rem] leading-[1.15] tracking-tight">
                             Do you have any questions? We know the answers.
                         </h2>
 

@@ -71,7 +71,7 @@ export default function Header() {
                                 key={link.name}
                                 to={link.path}
                                 className={({ isActive }) =>
-                                    `relative flex items-center px-4 font-saira text-lg font-normal tracking-wider transition-colors duration-200 h-full border-b-4 ${isActive || (link.path === '/home' && window.location.pathname === '/')
+                                    `relative flex items-center px-4 font-saira text-lg font-semibold tracking-wider transition-colors duration-200 h-full border-b-4 ${isActive || (link.path === '/home' && window.location.pathname === '/')
                                         ? 'text-[#e50914] border-[#e50914]'
                                         : isScrolled
                                             ? 'text-zinc-900 border-transparent hover:text-[#e50914] hover:border-zinc-300'

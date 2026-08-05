@@ -81,14 +81,14 @@ export default function ImplementationSection() {
                 />
             </div>
 
-            <div className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
+            <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
                 {/* Red Subtitle Category */}
                 <h3 className="text-red-600 font-saira font-semibold text-xl sm:text-2xl lg:text-3xl leading-snug">
                     Implementation
                 </h3>
 
                 {/* Main Headline */}
-                <h2 className="text-slate-900 tracking-wider font-saira font-black text-3xl sm:text-4xl lg:text-[2.75rem] leading-[1.15] tracking-tight">
+                <h2 className="text-[#003D58] tracking-wider font-saira font-black text-3xl sm:text-4xl lg:text-[3.75rem] leading-[1.15] tracking-tight">
                     Come by and turn your car into a{' '}
                     <span className="text-red-600">masterpiece.</span>
                 </h2>
@@ -136,9 +136,8 @@ export default function ImplementationSection() {
                                     src={img.src}
                                     alt={img.alt}
                                     draggable={false}
-                                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${
-                                        idx === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                                    }`}
+                                    className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-700 ease-in-out ${idx === currentIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                                        }`}
                                 />
                             ))}
 
