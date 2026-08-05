@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import OpeningHoursSection from '../Home/OpeningHoursSection';
 import imgEngine from '../../assets/AboutUs/Doityourself_1632.jpg';
 import imgCar1 from '../../assets/AboutUs/Oldtimer-SW1.jpg';
 import imgCar3 from '../../assets/AboutUs/Oldtimer-SW3.jpg';

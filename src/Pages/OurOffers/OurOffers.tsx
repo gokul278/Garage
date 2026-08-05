@@ -1,4 +1,3 @@
-import OpeningHoursSection from '../Home/OpeningHoursSection';
 import offerImg from '../../assets/OurOffers/home_tuning_offer1.jpg';
 import girlImg from '../../assets/OurOffers/Girl-Schlüssel-Jeans.jpg';
 import payMethodsImg from '../../assets/OurOffers/Brand/SW-PayMethods-1-768x181.jpg';

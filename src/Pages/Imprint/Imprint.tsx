@@ -1,5 +1,3 @@
-import OpeningHoursSection from '../Home/OpeningHoursSection';
-
 export default function Imprint() {
     return (
         <main className="w-full min-h-screen bg-white text-zinc-900 pt-24 sm:pt-28 pb-16 font-saira">

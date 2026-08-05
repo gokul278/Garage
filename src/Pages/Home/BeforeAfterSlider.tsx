@@ -30,16 +30,6 @@ export default function BeforeAfterSlider({
         []
     );
 
-    const handleTouchMove = useCallback(
-        (e: TouchEvent) => {
-            if (!isDragging) return;
-            if (e.touches[0]) {
-                handleMove(e.touches[0].clientX);
-            }
-        },
-        [isDragging, handleMove]
-    );
-
     const handleMouseMove = useCallback(
         (e: MouseEvent) => {
             if (!isDragging) return;
