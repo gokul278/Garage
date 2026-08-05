@@ -16,7 +16,7 @@ export default function PageTransition({ children }: PageTransitionProps) {
 
         const timer = setTimeout(() => {
             setIsAnimating(false);
-        }, 5000);
+        }, 750);
 
         return () => clearTimeout(timer);
     }, [location.key, location.pathname]);
