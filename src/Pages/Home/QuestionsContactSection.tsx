@@ -2,7 +2,7 @@ import logoImg from '../../assets/Logo/Logo.png';
 
 export default function QuestionsContactSection() {
     return (
-        <section className="w-full bg-white text-zinc-900 py-16 sm:py-24 font-saira border-t border-zinc-100">
+        <section className="w-full bg-white text-zinc-900 pt-6 sm:pt-8 pb-16 sm:pb-24 font-saira">
             <div className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-20">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
 

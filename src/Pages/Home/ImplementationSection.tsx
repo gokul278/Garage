@@ -71,7 +71,7 @@ export default function ImplementationSection() {
     };
 
     return (
-        <section className="relative w-full bg-white text-zinc-900 py-16 sm:py-24 font-saira overflow-hidden">
+        <section className="relative w-full bg-white text-zinc-900 pt-16 sm:pt-20 pb-4 sm:pb-6 font-saira overflow-hidden">
             {/* Background Watermark Image "R" */}
             <div className="absolute top-12 left-0 sm:left-2 lg:left-6 pointer-events-none select-none z-0">
                 <img
