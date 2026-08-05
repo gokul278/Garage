@@ -121,7 +121,7 @@ export default function ImplementationSection() {
                     >
                         {/* Image Display Frame with Touch & Mouse Drag */}
                         <div
-                            className="relative w-full aspect-[4/3] rounded-md overflow-hidden shadow-lg border border-zinc-200 bg-zinc-100 cursor-grab active:cursor-grabbing select-none"
+                            className="relative w-full aspect-[4/3] rounded-md overflow-hidden shadow-lg border border-zinc-200 bg-zinc-100 cursor-grab active:cursor-grabbing select-none touch-pan-y"
                             onTouchStart={(e) => onStart(e.touches[0].clientX)}
                             onTouchMove={(e) => onMove(e.touches[0].clientX)}
                             onTouchEnd={onEnd}

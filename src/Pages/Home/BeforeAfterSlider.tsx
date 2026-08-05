@@ -54,23 +54,29 @@ export default function BeforeAfterSlider({
 
     useEffect(() => {
         if (isDragging) {
+            const handleTouchMovePrevent = (e: TouchEvent) => {
+                if (e.cancelable) e.preventDefault();
+                if (e.touches[0]) handleMove(e.touches[0].clientX);
+            };
+
             window.addEventListener('mousemove', handleMouseMove);
             window.addEventListener('mouseup', handleMouseUp);
-            window.addEventListener('touchmove', handleTouchMove);
+            window.addEventListener('touchmove', handleTouchMovePrevent, { passive: false });
             window.addEventListener('touchend', handleMouseUp);
+
+            return () => {
+                window.removeEventListener('mousemove', handleMouseMove);
+                window.removeEventListener('mouseup', handleMouseUp);
+                window.removeEventListener('touchmove', handleTouchMovePrevent);
+                window.removeEventListener('touchend', handleMouseUp);
+            };
         }
-        return () => {
-            window.removeEventListener('mousemove', handleMouseMove);
-            window.removeEventListener('mouseup', handleMouseUp);
-            window.removeEventListener('touchmove', handleTouchMove);
-            window.removeEventListener('touchend', handleMouseUp);
-        };
-    }, [isDragging, handleMouseMove, handleMouseUp, handleTouchMove]);
+    }, [isDragging, handleMouseMove, handleMouseUp, handleMove]);
 
     return (
         <div
             ref={containerRef}
-            className="relative w-full aspect-[16/9] rounded-lg overflow-hidden shadow-2xl select-none group border border-white/10"
+            className="relative w-full aspect-[16/9] rounded-lg overflow-hidden shadow-2xl select-none group border border-white/10 touch-none"
             onMouseDown={(e) => {
                 setIsDragging(true);
                 handleMove(e.clientX);
