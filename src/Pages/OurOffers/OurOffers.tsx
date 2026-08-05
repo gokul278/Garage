@@ -1,75 +1,36 @@
 import offerImg from '../../assets/OurOffers/home_tuning_offer1.jpg';
 import girlImg from '../../assets/OurOffers/Girl-Schlüssel-Jeans.jpg';
 import payMethodsImg from '../../assets/OurOffers/Brand/SW-PayMethods-1-768x181.jpg';
+import { useLanguage } from '../../Context/LanguageContext';
 
 export default function OurOffers() {
+    const { t } = useLanguage();
+
     const priceList = [
-        { offer: 'Flat rate for disposal and cleaning', price: 'CHF 7.-' },
-        { offer: 'Work lift and tool rental per hour', price: 'CHF 32.-' },
-        { offer: 'Evaporate the engine and chassis on the washing pit', price: 'CHF 60.-' },
-        { offer: 'Washing pit in connection with workstation', price: 'CHF 45.-' },
-        { offer: 'Diagnostics on the vehicle without tools', price: 'CHF 40.-' },
-        { offer: 'Diagnostic tool for all vehicles', price: 'CHF 70.-' },
-        { offer: 'Mounting tires ( 4 x ) on rim incl. balancing weights | Prerequisite: Experience with work equipment', price: 'CHF 60.-' },
-        { offer: 'Brake test on brake test bench', price: 'CHF 25.-' },
-        { offer: 'Oil and oil filter replacement incl. Altoel disposal', price: 'CHF 43.75.-' },
-        { offer: 'Overnight stay | Storage of your vehicle per night', price: 'CHF 20.-' },
-        { offer: 'With the help of a professional per hour | You will be charged at CHF 2 per minute', price: 'CHF 142.-' },
-        { offer: '1 litre engine oil 10W40', price: 'CHF 17.50' },
-        { offer: '1 litre engine oil 5W30', price: 'CHF 28.-' },
-        { offer: '1 can of brake cleaner', price: 'CHF 7.-' },
+        { offerKey: 'offers.price1', price: 'CHF 7.-' },
+        { offerKey: 'offers.price2', price: 'CHF 32.-' },
+        { offerKey: 'offers.price3', price: 'CHF 60.-' },
+        { offerKey: 'offers.price4', price: 'CHF 45.-' },
+        { offerKey: 'offers.price5', price: 'CHF 40.-' },
+        { offerKey: 'offers.price6', price: 'CHF 70.-' },
+        { offerKey: 'offers.price7', price: 'CHF 60.-' },
+        { offerKey: 'offers.price8', price: 'CHF 25.-' },
+        { offerKey: 'offers.price9', price: 'CHF 43.75.-' },
+        { offerKey: 'offers.price10', price: 'CHF 20.-' },
+        { offerKey: 'offers.price11', price: 'CHF 142.-' },
+        { offerKey: 'offers.price12', price: 'CHF 17.50' },
+        { offerKey: 'offers.price13', price: 'CHF 28.-' },
+        { offerKey: 'offers.price14', price: 'CHF 7.-' },
     ];
 
     const checklistItems = [
-        {
-            text: (
-                <>
-                    Rent a <strong className="font-bold text-slate-900">garage workstation by the hour with a car lift</strong> and everything that goes with it to repair your car yourself
-                </>
-            ),
-        },
-        {
-            text: (
-                <>
-                    Rent a <strong className="font-bold text-slate-900">washing pit or a large space</strong> by the hour
-                </>
-            ),
-        },
-        {
-            text: (
-                <>
-                    As a renter, you can obtain spare parts and accessories <strong className="font-bold text-slate-900">at favourable conditions</strong>
-                </>
-            ),
-        },
-        {
-            text: (
-                <>
-                    <strong className="font-bold text-slate-900">Get help</strong> from one of our mechanics and show you how to repair and maintain your car yourself
-                </>
-            ),
-        },
-        {
-            text: (
-                <>
-                    <strong className="font-bold text-slate-900">Bring your own accessories and spare parts</strong> or order them from us in advance
-                </>
-            ),
-        },
-        {
-            text: (
-                <>
-                    Dispose of replaced liquids and materials <strong className="font-bold text-slate-900">of all kinds</strong>
-                </>
-            ),
-        },
-        {
-            text: (
-                <>
-                    <strong className="font-bold text-slate-900">Bring your own tools</strong> or use our <strong className="font-bold text-slate-900">professionally equipped tool range</strong>
-                </>
-            ),
-        },
+        { key: 'offers.check1' },
+        { key: 'offers.check2' },
+        { key: 'offers.check3' },
+        { key: 'offers.check4' },
+        { key: 'offers.check5' },
+        { key: 'offers.check6' },
+        { key: 'offers.check7' },
     ];
 
     return (
@@ -82,12 +43,12 @@ export default function OurOffers() {
                     <div className="lg:col-span-6 space-y-6 max-w-2xl">
                         {/* Red Subtitle */}
                         <h3 className="text-red-600 font-saira font-semibold text-xl sm:text-2xl lg:text-3xl leading-snug">
-                            We&apos;ll get it for you
+                            {t('offers.subtitle')}
                         </h3>
 
                         {/* Main Headline */}
                         <h2 className="text-[#003D58] tracking-wider font-saira font-black text-3xl sm:text-4xl lg:text-[3.75rem] leading-[1.15] tracking-tight">
-                            Bring your car. We&apos;ll take care of the rest for you.
+                            {t('offers.headline')}
                         </h2>
 
                         {/* Two-Toned Accent Line Below Title */}
@@ -98,7 +59,7 @@ export default function OurOffers() {
 
                         {/* Paragraph */}
                         <p className="text-[#1b4356] font-saira font-normal text-base sm:text-lg leading-relaxed pt-2">
-                            You have an old car. A really old one. A classic car. Or a new one.. It doesn&apos;t matter. The fact is that you like your car so much that you don&apos;t want to let anyone do it. And by no one do you mean: no one but yourself.
+                            {t('offers.p1')}
                         </p>
                     </div>
 
@@ -124,16 +85,16 @@ export default function OurOffers() {
                             {/* Headline */}
                             <div className="space-y-1">
                                 <h3 className="text-red-600 font-saira font-semibold text-xl sm:text-2xl lg:text-3xl leading-snug">
-                                    Even cheaper:
+                                    {t('offers.checklistSubtitle')}
                                 </h3>
                                 <h2 className="text-red-600 font-saira font-black text-3xl sm:text-4xl lg:text-[2.6rem] leading-[1.15] tracking-tight">
-                                    No more basic tax with immediate effect!
+                                    {t('offers.checklistHeadline')}
                                 </h2>
                             </div>
 
                             {/* Sub-label */}
                             <p className="text-zinc-600 font-saira text-base font-medium pt-2">
-                                You can do all this in the do-it-yourself garage:
+                                {t('offers.checklistIntro')}
                             </p>
 
                             {/* Checklist */}
@@ -144,7 +105,7 @@ export default function OurOffers() {
                                             ✓
                                         </span>
                                         <p className="text-[#1b4356] font-saira text-sm sm:text-base leading-relaxed">
-                                            {item.text}
+                                            {t(item.key)}
                                         </p>
                                     </div>
                                 ))}
@@ -156,10 +117,10 @@ export default function OurOffers() {
                             {/* Headline */}
                             <div className="space-y-2">
                                 <h3 className="text-red-600 font-saira font-semibold text-xl sm:text-2xl lg:text-3xl leading-snug">
-                                    Rent instead of buying yourself
+                                    {t('offers.rentSubtitle')}
                                 </h3>
                                 <h2 className="text-[#003D58] tracking-wider font-saira font-black text-3xl sm:text-4xl lg:text-[3.20rem] leading-[1.15] tracking-tight">
-                                    What does it all cost you?
+                                    {t('offers.rentHeadline')}
                                 </h2>
                             </div>
 
@@ -171,22 +132,22 @@ export default function OurOffers() {
 
                             {/* Highlight Paragraph */}
                             <p className="text-[#1b4356] font-saira font-normal text-base sm:text-lg leading-relaxed pt-2">
-                                Surprisingly little. Well, maybe it&apos;s not that surprising when you consider that you have to do everything yourself. But don&apos;t worry. We are here for you if you need us.
+                                {t('offers.rentP1')}
                             </p>
 
                             {/* Paragraph 1 */}
                             <p className="text-zinc-600 font-saira text-sm sm:text-base leading-relaxed">
-                                Even our car mechanics will support you for a sandwich, so to speak. See for yourself by taking a look at the price list: You can save a lot of money with us. Rent a garage instead of buying everything yourself.
+                                {t('offers.rentP2')}
                             </p>
 
                             {/* Paragraph 2 */}
                             <p className="text-zinc-600 font-saira text-sm sm:text-base leading-relaxed">
-                                Mind you: If you don&apos;t want to do anything yourself, then you&apos;ve come to the right place. After all, the do-it-yourself garage is run by Garage Santoro &amp; Wiederkehr AG. And they understand cars. No matter what brand or year of manufacture. So if your car needs a repair or service, you should come to us anyway.
+                                {t('offers.rentP3')}
                             </p>
 
                             {/* Paragraph 3 */}
                             <p className="text-[#1b4356] font-saira text-base sm:text-lg font-semibold leading-relaxed pt-2">
-                                By the way: As a tenant of a workplace, you can buy service parts at favorable conditions. We are happy to answer any specific requests.
+                                {t('offers.rentP4')}
                             </p>
                         </div>
 
@@ -212,16 +173,16 @@ export default function OurOffers() {
                         <div className="lg:col-span-7 space-y-4">
                             {/* Headline */}
                             <h2 className="text-[#1b4356] font-saira font-black text-3xl sm:text-4xl lg:text-[3.75rem] leading-[1.15] tracking-tight">
-                                Price list
+                                {t('offers.priceHeadline')}
                             </h2>
                             <p className="text-xs text-zinc-400 font-saira pb-2">
-                                Prices are in Swiss francs excl. VAT. As of 07.2022 | Subject to change
+                                {t('offers.priceNotice')}
                             </p>
 
                             {/* Table Header */}
                             <div className="flex justify-between items-center pb-2 border-b-2 border-slate-900 font-saira">
-                                <span className="text-xl font-bold text-slate-900">Offers</span>
-                                <span className="text-xl font-bold text-slate-900 text-right">Prices</span>
+                                <span className="text-xl font-bold text-slate-900">{t('offers.tableHeaderOffers')}</span>
+                                <span className="text-xl font-bold text-slate-900 text-right">{t('offers.tableHeaderPrices')}</span>
                             </div>
 
                             {/* Table Rows */}
@@ -229,7 +190,7 @@ export default function OurOffers() {
                                 {priceList.map((item, idx) => (
                                     <div key={idx} className="py-3 flex justify-between items-center gap-4 text-sm sm:text-base font-saira">
                                         <span className="text-[#1b4356] font-medium leading-normal">
-                                            {item.offer}
+                                            {t(item.offerKey)}
                                         </span>
                                         <span className="font-semibold text-slate-900 whitespace-nowrap text-right">
                                             {item.price}
@@ -240,7 +201,7 @@ export default function OurOffers() {
 
                             {/* Dispensing Counter Note */}
                             <p className="text-sm font-semibold text-slate-800 pt-4 font-saira">
-                                All special tools are available at the dispensing counter
+                                {t('offers.dispensingNotice')}
                             </p>
                         </div>
 
@@ -255,10 +216,10 @@ export default function OurOffers() {
                         {/* Left Text */}
                         <div className="space-y-2 text-center md:text-left max-w-xl">
                             <h3 className="text-white font-saira font-black text-3xl sm:text-4xl lg:text-[3.75rem] tracking-tight leading-none">
-                                Means of payment
+                                {t('offers.paymentTitle')}
                             </h3>
                             <p className="text-zinc-300 font-saira text-sm sm:text-base font-normal pt-1">
-                                We accept the following cards and of course cash. But no Bitcoins and no WE.
+                                {t('offers.paymentDesc')}
                             </p>
                         </div>
 

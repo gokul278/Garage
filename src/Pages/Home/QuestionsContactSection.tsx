@@ -1,6 +1,9 @@
 import logoImg from '../../assets/Logo/Logo.png';
+import { useLanguage } from '../../Context/LanguageContext';
 
 export default function QuestionsContactSection() {
+    const { t } = useLanguage();
+
     return (
         <section className="w-full bg-white text-zinc-900 pt-6 sm:pt-8 pb-16 sm:pb-24 font-saira">
             <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20">
@@ -10,12 +13,12 @@ export default function QuestionsContactSection() {
                     <div className="lg:col-span-6 space-y-6">
                         {/* Red Subtitle */}
                         <h3 className="text-red-600 font-saira font-semibold text-xl sm:text-2xl lg:text-3xl leading-snug">
-                            Just no inhibitions
+                            {t('questions.subtitle')}
                         </h3>
 
                         {/* Main Title */}
                         <h2 className="text-[#003D58] tracking-wider font-saira font-black text-3xl sm:text-4xl lg:text-[2.75rem] leading-[1.15] tracking-tight">
-                            Do you have any questions? We know the answers.
+                            {t('questions.headline')}
                         </h2>
 
                         {/* Phone Number */}
@@ -24,7 +27,7 @@ export default function QuestionsContactSection() {
                                 href="tel:0443119689"
                                 className="text-red-600 font-bold text-3xl sm:text-4xl lg:text-5xl tracking-wide hover:text-red-700 transition-colors inline-block"
                             >
-                                044 311 96 89
+                                {t('questions.phone')}
                             </a>
                         </div>
 

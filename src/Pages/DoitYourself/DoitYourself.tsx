@@ -1,47 +1,46 @@
 import { CalendarDays } from 'lucide-react';
 import mechanicImg from '../../assets/DoitYourself/Mechaniker-Rad-blau.jpg';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../../Context/LanguageContext';
 
 export default function DoitYourself() {
+    const { t } = useLanguage();
+
     const steps = [
         {
             number: '1',
-            title: 'You register with the Do-it-yourself-Garage',
+            title: t('diy.step1Title'),
             content: (
                 <p>
-                    Together we will discuss your needs and <strong className="font-semibold text-slate-900">select the workplace</strong> that is best suited to your project.
+                    {t('diy.step1Content')}
                 </p>
             ),
         },
         {
             number: '2',
-            title: "You'll be driving in with us",
+            title: t('diy.step2Title'),
             content: (
                 <p>
-                    On the big day of <strong className="font-semibold text-slate-900">DIY</strong> and <strong className="font-semibold text-slate-900">self-medying</strong>, you park your car in a parking lot at Siewerdtstrasse 5 and report to the reception. You will be instructed in your workplace by our staff and will receive the tools as well as the ordered spare parts or accessories.
+                    {t('diy.step2Content')}
                 </p>
             ),
         },
         {
             number: '3',
-            title: 'You work on your vehicle',
+            title: t('diy.step3Title'),
             content: (
                 <p>
-                    You can get refreshments at any time during your work. After all, you are <strong className="font-semibold text-slate-900">now your own boss</strong> and can take breaks whenever you want. And if you have any questions or problems, just contact our staff, who will be happy to help and advise you.
+                    {t('diy.step3Content')}
                 </p>
             ),
         },
         {
             number: '4',
-            title: 'You check out',
+            title: t('diy.step4Title'),
             content: (
                 <div className="space-y-2">
-                    <p>
-                        When you&apos;ve finished your work, prepare the workstation and tools for return, clean them and put them back in their place - order is a must.
-                    </p>
-                    <p>
-                        At the reception you will receive the bill, which you can check and pay. And then it&apos;s time to drive off with your brand-new, so to speak, but definitely self-pimped car!
-                    </p>
+                    <p>{t('diy.step4Content1')}</p>
+                    <p>{t('diy.step4Content2')}</p>
                 </div>
             ),
         },
@@ -54,12 +53,12 @@ export default function DoitYourself() {
                 <div className="max-w-4xl space-y-6">
                     {/* Red Subtitle */}
                     <h3 className="text-red-600 font-saira font-semibold text-xl sm:text-2xl lg:text-3xl leading-snug">
-                        You can do it. All by yourself. Do it yourself.
+                        {t('diy.subtitle')}
                     </h3>
 
                     {/* Main Headline */}
                     <h2 className="text-[#003D58] tracking-wider font-saira font-black text-3xl sm:text-4xl lg:text-[3.2rem] leading-[1.15] tracking-tight">
-                        Rent a garage space with a car lift - repair the car yourself.
+                        {t('diy.headline')}
                     </h2>
 
                     {/* Two-Toned Accent Line Below Title */}
@@ -70,16 +69,12 @@ export default function DoitYourself() {
 
                     {/* Paragraphs */}
                     <div className="space-y-4 pt-4 text-[#1b4356] font-saira font-normal text-base sm:text-lg leading-relaxed">
-                        <p>
-                            The do-it-yourself garage is well organized. To ensure that the management of the workstations, the provision of tools and equipment and the disposition of any spare parts that may be required run smoothly, you should reserve your workstation at least 5 working days in advance.
-                        </p>
-                        <p className="font-medium text-slate-800">
-                            This is how easy it is to get your classic car - or any current vehicle model - in shape in four steps:
-                        </p>
+                        <p>{t('diy.introP1')}</p>
+                        <p className="font-medium text-slate-800">{t('diy.introP2')}</p>
                     </div>
                 </div>
 
-                {/* 4 Steps Section: Left vertical 3D HTML/CSS numbered list + Right mechanic image */}
+                {/* 4 Steps Section */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center pt-12">
 
                     {/* Left Column: Vertical Steps List */}
@@ -132,15 +127,15 @@ export default function DoitYourself() {
                         {/* Left Column: Heading & Description Text */}
                         <div className="lg:col-span-7 space-y-4">
                             <h2 className="text-[#1b4356] font-saira font-black text-3xl sm:text-4xl lg:text-5xl tracking-tight leading-[1.15]">
-                                It&apos;s all super simple, right?
+                                {t('diy.calloutTitle')}
                             </h2>
 
                             <p className="text-[#1b4356] font-saira font-normal text-base sm:text-lg leading-relaxed pt-2">
-                                So, if a screw is loose on your car, it&apos;s best to contact us right away. You can do it again.
+                                {t('diy.calloutP1')}
                             </p>
 
                             <p className="text-[#1b4356] font-saira font-normal text-base sm:text-lg leading-relaxed">
-                                Contact us and secure your assembly space for your next vehicle project in good time!
+                                {t('diy.calloutP2')}
                             </p>
                         </div>
 
@@ -153,17 +148,17 @@ export default function DoitYourself() {
                                 {/* Lucide Red Calendar Icon */}
                                 <CalendarDays className="w-24 h-24 sm:w-28 sm:h-28 text-[#e50914] stroke-[1.75] transition-transform duration-300 group-hover:scale-105" />
 
-                                {/* Red Underline Accent with Expand Animation on Hover */}
+                                {/* Red Underline Accent */}
                                 <div className="w-12 group-hover:w-28 h-[2px] my-4 bg-[#e50914] transition-all duration-300 my-1"></div>
 
                                 {/* Title */}
                                 <h3 className="text-[#e50914] font-saira font-semibold text-3xl sm:text-4xl lg:text-[2.6rem] tracking-wider uppercase leading-none pt-1">
-                                    RESERVATION
+                                    {t('diy.reservationTitle')}
                                 </h3>
 
                                 {/* Subtitle */}
                                 <p className="text-[#1b4356] font-saira font-medium text-base sm:text-lg pt-1">
-                                    Contact form, e-mail or call
+                                    {t('diy.reservationSub')}
                                 </p>
                             </Link>
                         </div>

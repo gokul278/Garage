@@ -13,8 +13,11 @@ import img11 from '../../assets/Workplace/Image11.jpg';
 import img12 from '../../assets/Workplace/Image12.jpg';
 import espressaLogo from '../../assets/Workplace/Logo_espressa-web2-260x77.jpg';
 import safetyFirstImg from '../../assets/Workplace/SW-Safety-First-768x768.png';
+import { useLanguage } from '../../Context/LanguageContext';
 
 export default function YourWorkplace() {
+    const { t } = useLanguage();
+
     const images = [
         { src: img1, alt: 'Garage workplace 1' },
         { src: img2, alt: 'Garage workplace 2' },
@@ -86,12 +89,12 @@ export default function YourWorkplace() {
                 <div className="space-y-6">
                     {/* Red Subtitle Category */}
                     <h3 className="text-red-600 font-saira font-semibold text-xl sm:text-2xl lg:text-3xl leading-snug">
-                        Our garage - your workplace
+                        {t('workplace.subtitle')}
                     </h3>
 
                     {/* Main Headline */}
                     <h2 className="text-[#003D58] tracking-wider font-saira font-black text-3xl sm:text-4xl lg:text-[3.00rem] leading-[1.15] tracking-tight">
-                        In the workshop, you are your own boss.
+                        {t('workplace.headline')}
                     </h2>
 
                     {/* Two-Toned Accent Line Below Title */}
@@ -102,16 +105,14 @@ export default function YourWorkplace() {
 
                     {/* Paragraph 1 */}
                     <p className="text-[#1b4356] font-saira font-normal text-base sm:text-lg leading-relaxed pt-2">
-                        The do-it-yourself garage offers perfect working conditions for you and your car. Each of the five sites is equipped with a car lift, clean, well lit and well ventilated. A well-stocked and tidy tool cabinet is also available. In addition, there is all the equipment that the self-made car mechanic&apos;s heart desires: washing pit, diagnostic devices for almost all brands, brake test bench, air conditioning service unit, exhaust gas test devices for diesel and gasoline and much more...
+                        {t('workplace.p1')}
                     </p>
 
                     {/* 12-Column Grid: Left Paragraph + Right Workshop Image Carousel */}
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center pt-8">
                         {/* Left Column - Paragraph 2 */}
                         <div className="lg:col-span-6 text-[#626262] font-saira font-normal text-base sm:text-lg leading-relaxed">
-                            <p>
-                                When you reserve a place with us, we will discuss in advance exactly whether you need any accessories or spare parts - and which ones. You can get them from us at preferential conditions, and when you drive in with us, they are ready for you. Of course, we always have enough common, non-brand-specific consumables such as engine oil, straps, screws, etc. in stock.
-                            </p>
+                            <p>{t('workplace.p2')}</p>
                         </div>
 
                         {/* Right Column - Workshop Image Carousel */}
@@ -199,7 +200,7 @@ export default function YourWorkplace() {
                 <div className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-20 space-y-6">
                     {/* Main Headline */}
                     <h2 className="text-[#1b4356] font-saira font-black text-3xl sm:text-4xl lg:text-[3.20rem] leading-[1.15] tracking-tight">
-                        Take breaks as needed!
+                        {t('workplace.breakHeadline')}
                     </h2>
 
                     {/* Two-Toned Accent Line Below Title */}
@@ -210,18 +211,17 @@ export default function YourWorkplace() {
 
                     {/* Highlight Subtext */}
                     <p className="text-[#1b4356] font-saira font-normal text-base sm:text-lg leading-relaxed pt-2">
-                        Even the greatest fighter has to recover in between. No, not in a cave. Nowadays, the best way to do this is at our coffee machine &ndash; from our coffee partner &quot;Espressa&quot;.
+                        {t('workplace.breakHighlight')}
                     </p>
 
                     {/* Body Text */}
                     <p className="text-zinc-600 font-saira font-normal text-sm sm:text-base leading-relaxed">
-                        The best Italian coffee with a delicious aroma is waiting for you. Brand? Lavazza &ndash; more than just taste. And for the small hunger in between, a snack machine is ready for you. Sink into our comfortable lounge and treat yourself to a short break. You&apos;ve certainly earned it. So, after the little break, it&apos;s back to work. You didn&apos;t come to enjoy the finest Italian coffee, but to work on your vehicle. So let&apos;s go, hop-hop, back to the workshop.
+                        {t('workplace.breakP1')}
                     </p>
 
                     {/* PS Text */}
                     <p className="text-zinc-600 font-saira font-normal text-sm sm:text-base leading-relaxed pt-1">
-                        PS: Do you want the southern coffee enjoyment for your home or office? Then we can warmly recommend our partner{' '}
-                        <strong className="text-red-600 font-semibold">&quot;Espressa&quot;</strong>. As we all know, life is too short to drink bad coffee.
+                        {t('workplace.breakPS')}
                     </p>
 
                     {/* Espressa Logo */}
@@ -235,7 +235,7 @@ export default function YourWorkplace() {
                 </div>
             </section>
 
-            {/* Safety First Section matching design screenshot */}
+            {/* Safety First Section */}
             <section className="w-full bg-white text-zinc-900 border-t border-zinc-200 py-16 sm:py-20 font-saira">
                 <div className="max-w-6xl mx-auto px-6 sm:px-12 lg:px-20">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
@@ -253,7 +253,7 @@ export default function YourWorkplace() {
                         <div className="lg:col-span-7 space-y-6">
                             {/* Headline */}
                             <h2 className="text-[#1b4356] font-saira font-black text-3xl sm:text-4xl lg:text-[3.20rem] leading-[1.15] tracking-tight">
-                                Safety first
+                                {t('workplace.safetyHeadline')}
                             </h2>
 
                             {/* Two-Toned Accent Line Below Title */}
@@ -264,26 +264,26 @@ export default function YourWorkplace() {
 
                             {/* Subtitle Highlight */}
                             <p className="text-[#1b4356] font-saira font-normal text-base sm:text-lg leading-relaxed pt-2">
-                                Your safety comes first. Without wanting to paint the devil on the wall, but preventive safety is a must. For you, the other customers and us.
+                                {t('workplace.safetyHighlight')}
                             </p>
 
                             {/* Risk of Accident */}
                             <div className="space-y-1.5">
                                 <h4 className="font-bold text-slate-800 text-base sm:text-lg font-saira">
-                                    Risk of accident
+                                    {t('workplace.accidentTitle')}
                                 </h4>
                                 <p className="text-zinc-600 font-saira text-sm sm:text-base leading-relaxed">
-                                    Anyone who causes damage to us, or to a customer or his vehicle in our company is liable for this. To make it easier to prove damage, we continuously record the incidents in our company. Staying in our company and working with our equipment is at your own risk. This important notice can also be found on all entrance doors.
+                                    {t('workplace.accidentDesc')}
                                 </p>
                             </div>
 
                             {/* Risk of Theft */}
                             <div className="space-y-1.5 pt-2">
                                 <h4 className="font-bold text-slate-800 text-base sm:text-lg font-saira">
-                                    Risk of theft
+                                    {t('workplace.theftTitle')}
                                 </h4>
                                 <p className="text-zinc-600 font-saira text-sm sm:text-base leading-relaxed">
-                                    Please lock away your valuables. Where? For example, in the glove compartment. You can also drop off smaller items such as keys, wallets or watches at our counter. We&apos;ll lock them away for you. The do-it-yourself garage is not liable for theft.
+                                    {t('workplace.theftDesc')}
                                 </p>
                             </div>
                         </div>

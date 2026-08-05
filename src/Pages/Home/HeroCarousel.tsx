@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../../Context/LanguageContext';
 import slide1Img from '../../assets/Hero/Slide1.png';
 import slide2Img from '../../assets/Hero/Slide2.png';
 import slide3Img from '../../assets/Hero/Slide3.png';
@@ -6,46 +7,48 @@ import slide4Img from '../../assets/Hero/Slide4.png';
 
 interface Slide {
     id: number;
-    title: string;
-    subtitle: string;
+    titleKey: string;
+    subKey: string;
     watermark: string;
     image: string;
     gradient: string;
 }
 
 export default function HeroCarousel() {
+    const { t } = useLanguage();
+
     const slides: Slide[] = [
         {
             id: 1,
-            title: "Wheel Change\nin the blink of an eye.",
-            subtitle: "Store your tires or wheels with us,\n come by and they will be changed in no time.",
-            watermark: "Sattler",
+            titleKey: 'hero.slide1Title',
+            subKey: 'hero.slide1Sub',
+            watermark: 'Sattler',
             image: slide2Img,
-            gradient: "from-[#1b4356] via-[#4d7d95] to-[#d8e7ee]"
+            gradient: 'from-[#1b4356] via-[#4d7d95] to-[#d8e7ee]'
         },
         {
             id: 2,
-            title: "There is hardly a spare part that\nwe cannot procure.",
-            subtitle: "Whatever parts you need, we are your\ncontact. Ordered to us and quickly\nassembled.",
-            watermark: "Tuning",
+            titleKey: 'hero.slide2Title',
+            subKey: 'hero.slide2Sub',
+            watermark: 'Tuning',
             image: slide1Img,
-            gradient: "from-[#e60012] via-[#ef454f] to-[#fdeef0]"
+            gradient: 'from-[#e60012] via-[#ef454f] to-[#fdeef0]'
         },
         {
             id: 3,
-            title: "Fancy more power?\nWe are your tuning experts.",
-            subtitle: "It's not always \"just\" about repairing or\nrestoring. Do you want the wolf in sheep's\nclothing? Everything is possible.",
-            watermark: "Teile",
+            titleKey: 'hero.slide3Title',
+            subKey: 'hero.slide3Sub',
+            watermark: 'Teile',
             image: slide3Img,
-            gradient: "from-[#1b4356] via-[#4d7d95] to-[#d8e7ee]"
+            gradient: 'from-[#1b4356] via-[#4d7d95] to-[#d8e7ee]'
         },
         {
             id: 4,
-            title: "We can do almost anything.\nAlso saddlery work.",
-            subtitle: "With our partners, we cover the entire area of\nvehicle restoration and repair. We will be\nhappy to advise you.",
-            watermark: "Räder",
+            titleKey: 'hero.slide4Title',
+            subKey: 'hero.slide4Sub',
+            watermark: 'Räder',
             image: slide4Img,
-            gradient: "from-[#e60012] via-[#ef454f] to-[#fdeef0]"
+            gradient: 'from-[#e60012] via-[#ef454f] to-[#fdeef0]'
         }
     ];
 
@@ -70,8 +73,6 @@ export default function HeroCarousel() {
     return (
         <section
             className={`relative w-full overflow-hidden text-white h-[calc(100vh-80px)] min-h-[580px] max-h-[720px] flex items-center select-none bg-gradient-to-r ${activeSlide.gradient} transition-all duration-1000 ease-in-out`}
-        // onMouseEnter={() => setIsPaused(true)}
-        // onMouseLeave={() => setIsPaused(false)}
         >
             {/* Render all slides with smooth cross-fade animation */}
             {slides.map((slide, index) => {
@@ -85,7 +86,7 @@ export default function HeroCarousel() {
                             : 'opacity-0 -translate-x-10 z-0 pointer-events-none'
                             }`}
                     >
-                        {/* Right Side Full Screen Height & Full Right Edge Image Div with Center Line Reveal */}
+                        {/* Right Side Image Div */}
                         <div
                             className={`absolute top-0 right-0 h-full w-full lg:w-[52%] xl:w-[55%] z-0 transition-all duration-700 ease-in-out ${isActive ? 'opacity-100' : 'opacity-0'
                                 }`}
@@ -94,32 +95,29 @@ export default function HeroCarousel() {
                                 transition: 'clip-path 850ms cubic-bezier(0.25, 1, 0.5, 1), opacity 400ms ease-in-out'
                             }}
                         >
-                            {/* Center Vertical Line Accent during expansion */}
+                            {/* Center Vertical Line Accent */}
                             <div
                                 className={`absolute top-0 left-1/2 -translate-x-1/2 h-full w-[2px] bg-white/70 z-20 pointer-events-none transition-all duration-700 ${isActive ? 'opacity-0' : 'opacity-100'
                                     }`}
                             />
 
-                            {/* Full Height & Edge Image Element */}
+                            {/* Full Height Image Element */}
                             <div className="relative w-full h-full overflow-hidden">
                                 <img
                                     src={slide.image}
-                                    alt={slide.title}
+                                    alt={t(slide.titleKey)}
                                     className={`w-full h-full object-cover object-center lg:object-right transition-transform duration-1000 ease-out ${isActive ? 'scale-100' : 'scale-110'
                                         }`}
                                 />
-
-                                {/* Gradient Fade Overlay to blend seamlessly into left background */}
-                                {/* <div className={`absolute inset-0 bg-gradient-to-r ${activeSlide.gradient} opacity-20`}></div> */}
                             </div>
                         </div>
 
-                        {/* Left Text Content Area (Aligned & High Z-Index) */}
+                        {/* Left Text Content Area */}
                         <div
                             onMouseEnter={() => setIsPaused(true)}
                             onMouseLeave={() => setIsPaused(false)}
                             className="max-w-7xl px-4 sm:px-6 lg:px-10 w-full relative z-20 pointer-events-auto">
-                            <div className="grid grid-cols-1 lg:grid-cols-12 bg-[rgba(0,0,0,0.8)]  p-5 lg:bg-[rgba(0,0,0,0.0)] lg:p-0 gap-8 items-center">
+                            <div className="grid grid-cols-1 lg:grid-cols-12 bg-[rgba(0,0,0,0.8)] p-5 lg:bg-[rgba(0,0,0,0.0)] lg:p-0 gap-8 items-center">
 
                                 {/* Left Text Column */}
                                 <div
@@ -128,7 +126,7 @@ export default function HeroCarousel() {
                                 >
                                     {/* Title */}
                                     <h1 className="text-3xl sm:text-4xl md:text-xl lg:text-[2.8rem] font-extrabold tracking-tight text-white leading-[1.15] font-saira whitespace-pre-line drop-shadow-md">
-                                        {slide.title}
+                                        {t(slide.titleKey)}
                                     </h1>
 
                                     {/* Two-Toned Accent Line Below Title */}
@@ -139,7 +137,7 @@ export default function HeroCarousel() {
 
                                     {/* Subtitle */}
                                     <p className="text-sm sm:text-base md:text-lg text-zinc-100 font-normal max-w-lg leading-relaxed whitespace-pre-line opacity-90 drop-shadow-sm">
-                                        {slide.subtitle}
+                                        {t(slide.subKey)}
                                     </p>
                                 </div>
 

@@ -4,8 +4,11 @@ import imgEngine from '../../assets/AboutUs/Doityourself_1632.jpg';
 import imgCar1 from '../../assets/AboutUs/Oldtimer-SW1.jpg';
 import imgCar3 from '../../assets/AboutUs/Oldtimer-SW3.jpg';
 import bgWheel from '../../assets/AboutUs/SW-Background-über-uns.jpg';
+import { useLanguage } from '../../Context/LanguageContext';
 
 export default function AboutUs() {
+    const { t } = useLanguage();
+
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
     const [zoomScale, setZoomScale] = useState<number>(1);
     const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -94,7 +97,7 @@ export default function AboutUs() {
 
     return (
         <main className="w-full min-h-screen bg-white text-zinc-900 pt-20 font-saira relative overflow-hidden">
-            {/* Right Side Metallic Wheel Rim Watermark Background - hidden on mobile/tablet, shown only on laptop view */}
+            {/* Right Side Metallic Wheel Rim Watermark Background */}
             <img
                 src={bgWheel}
                 alt="Wheel background graphic watermark"
@@ -105,7 +108,7 @@ export default function AboutUs() {
             <section className="w-full relative z-10 py-0 pb-0">
                 <div className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start pl-0 pr-0">
 
-                    {/* Left Column: Stacked 3 Images touching left and bottom edge with hover magnifying glass overlay */}
+                    {/* Left Column: Stacked 3 Images */}
                     <div className="lg:col-span-5 w-full flex flex-col pl-0 ml-0 pb-0 mb-0 overflow-hidden">
 
                         {/* Image 1: Engine Block */}
@@ -170,19 +173,20 @@ export default function AboutUs() {
 
                     </div>
 
-                    {/* Right Column: Text Content Blocks with mobile/tablet padding */}
+                    {/* Right Column: Text Content Blocks */}
                     <div className="lg:col-span-7 space-y-12 max-w-xl lg:max-w-2xl px-6 sm:px-10 lg:px-0 lg:pr-16 py-12 sm:py-16">
 
                         {/* Section 1: Who are we? */}
                         <div className="space-y-5">
                             {/* Red Subtitle */}
                             <h3 className="text-red-600 font-saira font-semibold text-xl sm:text-2xl lg:text-3xl leading-snug">
-                                Who are we?
+                                {t('about.subtitle')}
                             </h3>
 
                             {/* Headline */}
-                            <h2 className="text-[#1b4356] font-saira font-black text-3xl sm:text-4xl lg:text-[3.20rem] leading-[1.15] tracking-tight">
-                                We are S&amp;W.And we are the car <span className="text-red-600">whisperers.</span>
+                            <h2 className="text-[#003D58] font-saira font-black text-3xl sm:text-4xl lg:text-[3.20rem] leading-[1.15] tracking-tight">
+                                {t('about.headlinePart1')}
+                                <span className="text-red-600">{t('about.headlineRed')}</span>
                             </h2>
 
                             {/* Two-Toned Accent Line Below Title */}
@@ -193,22 +197,22 @@ export default function AboutUs() {
 
                             {/* Highlight Paragraph */}
                             <p className="text-[#1b4356] font-saira font-normal text-base sm:text-lg leading-relaxed pt-2">
-                                We not only have our own vehicles tinkered with in our garage, but we also repair, maintain, maintain, tune, refine and beautify your new car or classic car ourselves.
+                                {t('about.highlightP')}
                             </p>
 
                             {/* Paragraph 1 */}
                             <p className="text-[#1b4356] font-saira font-normal text-base sm:text-lg leading-relaxed">
-                                Gino Santoro, the car mechanic, whom they also call the car whisperer, prefers to do (almost) everything himself.
+                                {t('about.p1')}
                             </p>
 
                             {/* Paragraph 2 */}
                             <p className="text-zinc-500 font-saira text-sm sm:text-base leading-relaxed">
-                                At some point, he had the clever idea that others could feel exactly the same. So the chief mechanic and co-owner of Garage Santoro &amp; Wiederkehr AG set up a concept to make his garage available to people with skilled hands who want to repair and maintain their cars themselves.
+                                {t('about.p2')}
                             </p>
 
                             {/* Paragraph 3 */}
                             <p className="text-zinc-500 font-saira text-sm sm:text-base leading-relaxed">
-                                Who can still remember the show &quot;Pimp it or kick it&quot; on SRF 2? In this regularly broadcast program, Gino Santoro did just that: make his garage available to laymen who could maintain their cars there themselves and prepare them for motor vehicle inspections. Of course, under his watchful eye, which looked over the shoulders of the TV mechanics, sometimes sternly, sometimes mischievously. Just come by for a jump.
+                                {t('about.p3')}
                             </p>
                         </div>
 
@@ -216,7 +220,8 @@ export default function AboutUs() {
                         <div className="space-y-5 pt-4">
                             {/* Headline */}
                             <h2 className="text-[#1b4356] font-saira font-black text-3xl sm:text-4xl lg:text-[3.20rem] leading-[1.15] tracking-tight">
-                                Over 85 years of <span className="text-red-600">experience</span>
+                                {t('about.expHeadline')}
+                                <span className="text-red-600">{t('about.expRed')}</span>
                             </h2>
 
                             {/* Two-Toned Accent Line Below Title */}
@@ -227,12 +232,12 @@ export default function AboutUs() {
 
                             {/* Highlight Paragraph */}
                             <p className="text-[#1b4356] font-saira font-normal text-base sm:text-lg leading-relaxed pt-2">
-                                With Gino Santoro and his team, you will find many years of experience.
+                                {t('about.expHighlight')}
                             </p>
 
                             {/* Body Paragraph */}
                             <p className="text-zinc-500 font-saira text-sm sm:text-base leading-relaxed">
-                                His well-rehearsed team &ndash; all trained car mechanics &ndash; are happy when it comes to tuning and refinements. Come by.
+                                {t('about.expBody')}
                             </p>
                         </div>
 
@@ -240,7 +245,8 @@ export default function AboutUs() {
                         <div className="space-y-5 pt-4">
                             {/* Headline */}
                             <h2 className="text-[#1b4356] font-saira font-black text-3xl sm:text-4xl lg:text-[3.20rem] leading-[1.15] tracking-tight">
-                                With joy and <span className="text-red-600">heart</span>
+                                {t('about.heartHeadline')}
+                                <span className="text-red-600">{t('about.heartRed')}</span>
                             </h2>
 
                             {/* Two-Toned Accent Line Below Title */}
@@ -251,17 +257,17 @@ export default function AboutUs() {
 
                             {/* Highlight Paragraph */}
                             <p className="text-[#1b4356] font-saira font-normal text-base sm:text-lg leading-relaxed pt-2">
-                                Classic car lovers and car mechanics with heart and soul with a huge amount of experience.
+                                {t('about.heartHighlight')}
                             </p>
 
                             {/* Body Paragraph 1 */}
                             <p className="text-zinc-500 font-saira text-sm sm:text-base leading-relaxed">
-                                Last but not least, Gino did not let go of the idea of a do-it-yourself garage because he himself is an incorrigible classic car lover. And these guys do a lot of things themselves &ndash; often out of necessity, because no one else understands their car anymore.
+                                {t('about.heartBody1')}
                             </p>
 
                             {/* Body Paragraph 2 */}
                             <p className="text-zinc-500 font-saira text-sm sm:text-base leading-relaxed">
-                                So, classic car fans, this is exactly where you can do it. By the way, Gino himself maintains and maintains a fleet of over 30 classic cars in this garage together with his team, all of which are privately owned.
+                                {t('about.heartBody2')}
                             </p>
                         </div>
 
@@ -270,7 +276,7 @@ export default function AboutUs() {
                 </div>
             </section>
 
-            {/* Interactive Fullscreen Portal Lightbox Modal with Zoom & Pan/Move support */}
+            {/* Interactive Fullscreen Portal Lightbox Modal */}
             {selectedImage && createPortal(
                 <div
                     className="fixed inset-0 z-[99999] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-8 select-none"
@@ -349,7 +355,7 @@ export default function AboutUs() {
                         </button>
                     </div>
 
-                    {/* Lightbox Main Image Frame with Drag Move & Scale */}
+                    {/* Lightbox Main Image Frame */}
                     <div
                         className="w-full h-full flex items-center justify-center overflow-hidden p-4"
                         onClick={(e) => e.stopPropagation()}

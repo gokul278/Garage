@@ -4,8 +4,11 @@ import logoImg from '../../assets/Logo/Logo.png';
 import imgInterior from '../../assets/ContactUs/Bild-5.jpg';
 import imgClassicCar from '../../assets/ContactUs/Ebene-0.jpg';
 import imgLiftReservation from '../../assets/ContactUs/Platzreservation.jpg';
+import { useLanguage } from '../../Context/LanguageContext';
 
 export default function ContactUs() {
+    const { t } = useLanguage();
+
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
     const [zoomScale, setZoomScale] = useState<number>(1);
     const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -120,7 +123,7 @@ export default function ContactUs() {
                 </div>
             </section>
 
-            {/* 2 Side-by-Side Car Images Grid below map matching screenshot 1 */}
+            {/* 2 Side-by-Side Car Images Grid below map */}
             <section className="w-full bg-white">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
                     {/* Image 1: Red Interior Steering Wheel */}
@@ -165,7 +168,7 @@ export default function ContactUs() {
                 </div>
             </section>
 
-            {/* "Call us - Reserve your place" Section matching screenshot 2 */}
+            {/* "Call us - Reserve your place" Section */}
             <section className="w-full bg-white text-zinc-900 border-t border-zinc-200">
                 <div className="w-full grid grid-cols-1 lg:grid-cols-12 items-center">
 
@@ -193,12 +196,12 @@ export default function ContactUs() {
                     <div className="lg:col-span-6 px-6 sm:px-12 lg:px-16 py-12 sm:py-16 space-y-6">
                         {/* Subtitle */}
                         <h3 className="text-red-600 font-saira font-semibold text-xl sm:text-2xl lg:text-3xl leading-snug">
-                            Call us
+                            {t('contact.callUs')}
                         </h3>
 
                         {/* Title */}
                         <h2 className="text-[#003D58] tracking-wider font-saira font-black text-3xl sm:text-4xl lg:text-[3.20rem] leading-[1.15] tracking-tight">
-                            Reserve your place
+                            {t('contact.reserveTitle')}
                         </h2>
 
                         {/* Red Phone Number */}
@@ -219,24 +222,23 @@ export default function ContactUs() {
 
                         {/* Body Text */}
                         <p className="text-zinc-600 font-saira text-base sm:text-lg leading-relaxed pt-2">
-                            Please send your reservations and inquiries to us by phone. You can reach us{' '}
-                            <strong className="font-bold text-slate-900">Monday to Friday, from 08:00 - 19:00.</strong> On Saturdays we are open by appointment only.
+                            {t('contact.reserveNotice')}
                         </p>
                     </div>
 
                 </div>
             </section>
 
-            {/* "Write to us" Form Section matching screenshot */}
+            {/* "Write to us" Form Section */}
             <section className="w-full bg-white text-zinc-900 border-t border-zinc-200 py-16 sm:py-24 font-saira">
                 <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-16">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
 
-                        {/* Left Column: English Text Information */}
+                        {/* Left Column: Text Information */}
                         <div className="lg:col-span-5 space-y-6">
                             {/* Headline */}
                             <h2 className="text-[#003D58] tracking-wider font-saira font-black text-3xl sm:text-4xl lg:text-[3.20rem] leading-[1.15] tracking-tight">
-                                Write to us
+                                {t('contact.writeTitle')}
                             </h2>
 
                             {/* Two-Toned Accent Line */}
@@ -247,8 +249,7 @@ export default function ContactUs() {
 
                             {/* Paragraph 1 */}
                             <p className="text-[#1b4356] font-saira text-lg sm:text-lg leading-relaxed pt-1">
-                                By e-mail or with the reservation form, it is of course possible around the clock. Such a reservation is only{' '}
-                                <strong className="font-bold text-[#003D58]">valid if it has been confirmed by us in writing or by telephone.</strong>
+                                {t('contact.writeP1')}
                             </p>
 
                             {/* Two-Toned Accent Line */}
@@ -259,8 +260,7 @@ export default function ContactUs() {
 
                             {/* Paragraph 2 */}
                             <p className="text-[#1b4356] font-saira text-lg leading-relaxed pt-1">
-                                <strong className="font-bold text-[#003D58]">Please note:</strong> If you need spare parts, you must reserve your garage space at least 10 days in advance. To order spare parts, we need the{' '}
-                                <strong className="font-bold text-[#003D58]">technical specifications of your vehicle, including the type certificate number</strong>, which you can find in the vehicle registration document.
+                                {t('contact.writeP2')}
                             </p>
 
                             {/* Two-Toned Accent Line */}
@@ -270,7 +270,7 @@ export default function ContactUs() {
                             </div>
                         </div>
 
-                        {/* Right Column: English Reservation Form */}
+                        {/* Right Column: Reservation Form */}
                         <div className="lg:col-span-7 space-y-4">
                             <form onSubmit={(e) => e.preventDefault()} className="space-y-4 font-saira">
                                 {/* Name Input */}
@@ -278,7 +278,7 @@ export default function ContactUs() {
                                     <input
                                         type="text"
                                         required
-                                        placeholder="First name and surname (required)"
+                                        placeholder={t('contact.formName')}
                                         className="w-full px-4 py-3 bg-zinc-50 border border-zinc-300 rounded-none focus:outline-none focus:border-red-600 text-sm text-zinc-900 placeholder:text-zinc-400"
                                     />
                                 </div>
@@ -288,7 +288,7 @@ export default function ContactUs() {
                                     <input
                                         type="tel"
                                         required
-                                        placeholder="Mobile number (required)"
+                                        placeholder={t('contact.formPhone')}
                                         className="w-full px-4 py-3 bg-zinc-50 border border-zinc-300 rounded-none focus:outline-none focus:border-red-600 text-sm text-zinc-900 placeholder:text-zinc-400"
                                     />
                                 </div>
@@ -298,7 +298,7 @@ export default function ContactUs() {
                                     <input
                                         type="email"
                                         required
-                                        placeholder="Your e-mail (required)"
+                                        placeholder={t('contact.formEmail')}
                                         className="w-full px-4 py-3 bg-zinc-50 border border-zinc-300 rounded-none focus:outline-none focus:border-red-600 text-sm text-zinc-900 placeholder:text-zinc-400"
                                     />
                                 </div>
@@ -306,7 +306,7 @@ export default function ContactUs() {
                                 {/* Check-in Date Input */}
                                 <div className="space-y-1">
                                     <label className="block text-xs font-semibold text-zinc-500">
-                                        Desired check-in date
+                                        {t('contact.formDate')}
                                     </label>
                                     <input
                                         type="date"
@@ -319,7 +319,7 @@ export default function ContactUs() {
                                 <div>
                                     <input
                                         type="text"
-                                        placeholder="Type certificate number (to be found in the vehicle registration document), make, model, year"
+                                        placeholder={t('contact.formSpecs')}
                                         className="w-full px-4 py-3 bg-zinc-50 border border-zinc-300 rounded-none focus:outline-none focus:border-red-600 text-sm text-zinc-900 placeholder:text-zinc-400"
                                     />
                                 </div>
@@ -329,7 +329,7 @@ export default function ContactUs() {
                                     <textarea
                                         rows={5}
                                         required
-                                        placeholder="Your message to us. Please make sure to reserve the garage space early for spare parts."
+                                        placeholder={t('contact.formMsg')}
                                         className="w-full px-4 py-3 bg-zinc-50 border border-zinc-300 rounded-none focus:outline-none focus:border-red-600 text-sm text-zinc-900 placeholder:text-zinc-400 resize-none"
                                     />
                                 </div>
@@ -340,7 +340,7 @@ export default function ContactUs() {
                                         type="submit"
                                         className="px-8 py-3.5 bg-red-600 hover:bg-red-700 text-white font-bold text-xs sm:text-sm tracking-wider uppercase rounded-none transition-colors shadow-md"
                                     >
-                                        SEND RESERVATION REQUEST
+                                        {t('contact.formSubmit')}
                                     </button>
                                 </div>
                             </form>
@@ -350,7 +350,7 @@ export default function ContactUs() {
                 </div>
             </section>
 
-            {/* Interactive Fullscreen Portal Lightbox Modal with Zoom & Drag Move support */}
+            {/* Interactive Fullscreen Portal Lightbox Modal */}
             {selectedImage && createPortal(
                 <div
                     className="fixed inset-0 z-[99999] bg-black/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-8 select-none"
@@ -429,7 +429,7 @@ export default function ContactUs() {
                         </button>
                     </div>
 
-                    {/* Lightbox Main Image Frame with Drag Move & Scale */}
+                    {/* Lightbox Main Image Frame */}
                     <div
                         className="w-full h-full flex items-center justify-center overflow-hidden p-4"
                         onClick={(e) => e.stopPropagation()}

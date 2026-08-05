@@ -8,8 +8,11 @@ import img5 from '../../assets/Cars/Image5.jpg';
 import img6 from '../../assets/Cars/Image6.jpg';
 import img7 from '../../assets/Cars/Image7.jpg';
 import img8 from '../../assets/Cars/Image8.jpg';
+import { useLanguage } from '../../Context/LanguageContext';
 
 export default function ImplementationSection() {
+    const { t } = useLanguage();
+
     const images = [
         { src: img1, alt: 'Garage workshop implementation 1' },
         { src: img2, alt: 'Garage workshop implementation 2' },
@@ -84,13 +87,13 @@ export default function ImplementationSection() {
             <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-20 relative z-10">
                 {/* Red Subtitle Category */}
                 <h3 className="text-red-600 font-saira font-semibold text-xl sm:text-2xl lg:text-3xl leading-snug">
-                    Implementation
+                    {t('impl.subtitle')}
                 </h3>
 
                 {/* Main Headline */}
                 <h2 className="text-[#003D58] tracking-wider font-saira font-black text-3xl sm:text-4xl lg:text-[3.75rem] leading-[1.15] tracking-tight">
-                    Come by and turn your car into a{' '}
-                    <span className="text-red-600">masterpiece.</span>
+                    {t('impl.headlinePart1')}
+                    <span className="text-red-600">{t('impl.headlineRed')}</span>
                 </h2>
 
                 {/* Two-Toned Accent Line Below Title */}
@@ -105,11 +108,11 @@ export default function ImplementationSection() {
                     {/* Left Column (lg:col-span-6) - Paragraphs */}
                     <div className="lg:col-span-6 space-y-6">
                         <p className="text-[#1b4356] font-saira font-normal text-sm sm:text-base leading-relaxed pt-2">
-                            In the do-it-yourself garage, all the infrastructure is at your disposal, from the tools to the appliances. And if something doesn't work out, you just call Gino. Exactly, this is the man you know from Swiss television. It is precisely there, in the programme &quot;Pimp it or kick it&quot;, that Gino regularly shows amateurs how they can repair their cars themselves. But if we understand correctly, as an ambitious do-it-yourself mechanic, you are definitely not a layman. And now: Off to the lift with you. Sorry, with your car.
+                            {t('impl.p1')}
                         </p>
 
                         <p className="text-[#1b4356] font-saira font-normal text-sm sm:text-base leading-relaxed">
-                            And this is what it looks like when the &quot;do-it-yourselfers&quot; lend a hand themselves and swap briefcases for tools.
+                            {t('impl.p2')}
                         </p>
                     </div>
 

@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import { useLanguage, type Language } from '../../Context/LanguageContext';
 import logoImg from '../../assets/Logo/Logo.png';
 import logoWhite from '../../assets/Logo/LogoWhite.png';
 
 export default function Header() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const { language, setLanguage, t } = useLanguage();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -33,16 +35,20 @@ export default function Header() {
     }, [isSidebarOpen]);
 
     const navLinks = [
-        { name: 'Home', path: '/home' },
-        { name: 'Do-it-yourself', path: '/do-it-yourself' },
-        { name: 'Your workplace', path: '/your-workplace' },
-        { name: 'Our offers', path: '/our-offers' },
-        { name: 'About us', path: '/about-us' },
-        { name: 'Contact Now', path: '/contact-now' },
+        { name: t('nav.home'), path: '/home' },
+        { name: t('nav.doItYourself'), path: '/do-it-yourself' },
+        { name: t('nav.yourWorkplace'), path: '/your-workplace' },
+        { name: t('nav.ourOffers'), path: '/our-offers' },
+        { name: t('nav.aboutUs'), path: '/about-us' },
+        { name: t('nav.contactNow'), path: '/contact-now' },
     ];
 
     const toggleSidebar = () => {
         setIsSidebarOpen(!isSidebarOpen);
+    };
+
+    const handleLanguageChange = (lang: Language) => {
+        setLanguage(lang);
     };
 
     return (
@@ -65,27 +71,85 @@ export default function Header() {
                     </div>
 
                     {/* Desktop Navigation */}
-                    <nav className="hidden lg:flex items-stretch h-full space-x-1">
-                        {navLinks.map((link) => (
-                            <NavLink
-                                key={link.name}
-                                to={link.path}
-                                className={({ isActive }) =>
-                                    `relative flex items-center px-4 font-saira text-lg font-semibold tracking-wider transition-colors duration-200 h-full border-b-4 ${isActive || (link.path === '/home' && window.location.pathname === '/')
-                                        ? 'text-[#e50914] border-[#e50914]'
-                                        : isScrolled
-                                            ? 'text-zinc-900 border-transparent hover:text-[#e50914] hover:border-zinc-300'
-                                            : 'text-white border-transparent hover:text-[#e50914] hover:border-gray-700'
-                                    }`
-                                }
-                            >
-                                {link.name}
-                            </NavLink>
-                        ))}
-                    </nav>
+                    <div className="hidden lg:flex items-center space-x-6">
+                        <nav className="flex items-stretch h-20 space-x-1">
+                            {navLinks.map((link) => (
+                                <NavLink
+                                    key={link.path}
+                                    to={link.path}
+                                    className={({ isActive }) =>
+                                        `relative flex items-center px-4 font-saira text-lg font-semibold tracking-wider transition-colors duration-200 h-full border-b-4 ${isActive || (link.path === '/home' && window.location.pathname === '/')
+                                            ? 'text-[#e50914] border-[#e50914]'
+                                            : isScrolled
+                                                ? 'text-zinc-900 border-transparent hover:text-[#e50914] hover:border-zinc-300'
+                                                : 'text-white border-transparent hover:text-[#e50914] hover:border-gray-700'
+                                        }`
+                                    }
+                                >
+                                    {link.name}
+                                </NavLink>
+                            ))}
+                        </nav>
 
-                    {/* Mobile / Tablet Menu Button */}
-                    <div className="lg:hidden flex items-center">
+                        {/* German | English Toggle Selector */}
+                        <div className={`flex items-center gap-1 p-1 rounded-full border text-xs font-bold font-mono transition-colors ${
+                            isScrolled
+                                ? 'bg-zinc-200/80 border-zinc-300 text-zinc-800'
+                                : 'bg-zinc-900/80 border-zinc-700 text-zinc-200'
+                        }`}>
+                            <button
+                                onClick={() => handleLanguageChange('de')}
+                                className={`px-2.5 py-1 rounded-full transition-all ${
+                                    language === 'de'
+                                        ? 'bg-red-600 text-white shadow-sm'
+                                        : 'hover:text-red-500'
+                                }`}
+                                title="Deutsch (German - Default)"
+                            >
+                                DE
+                            </button>
+                            <span className="text-zinc-500 font-normal">|</span>
+                            <button
+                                onClick={() => handleLanguageChange('en')}
+                                className={`px-2.5 py-1 rounded-full transition-all ${
+                                    language === 'en'
+                                        ? 'bg-red-600 text-white shadow-sm'
+                                        : 'hover:text-red-500'
+                                }`}
+                                title="English"
+                            >
+                                EN
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* Mobile / Tablet Controls (Menu Button + Language Toggle) */}
+                    <div className="lg:hidden flex items-center gap-3">
+                        {/* Mobile Language Switcher */}
+                        <div className="flex items-center gap-1 p-1 rounded-full border text-xs font-bold font-mono bg-zinc-900/80 border-zinc-700 text-zinc-200">
+                            <button
+                                onClick={() => handleLanguageChange('de')}
+                                className={`px-2 py-0.5 rounded-full transition-all ${
+                                    language === 'de'
+                                        ? 'bg-red-600 text-white'
+                                        : 'hover:text-red-500'
+                                }`}
+                            >
+                                DE
+                            </button>
+                            <span className="text-zinc-500 font-normal">|</span>
+                            <button
+                                onClick={() => handleLanguageChange('en')}
+                                className={`px-2 py-0.5 rounded-full transition-all ${
+                                    language === 'en'
+                                        ? 'bg-red-600 text-white'
+                                        : 'hover:text-red-500'
+                                }`}
+                            >
+                                EN
+                            </button>
+                        </div>
+
                         <button
                             onClick={toggleSidebar}
                             type="button"
@@ -115,7 +179,7 @@ export default function Header() {
                 </div>
             </header>
 
-            {/* Sidebar Navigation Overlay Drawer for Mobile (Rendered outside header element to prevent backdrop-filter stacking issues) */}
+            {/* Sidebar Navigation Overlay Drawer for Mobile */}
             <div
                 className={`fixed inset-0 z-[100] lg:hidden transition-opacity duration-300 ${isSidebarOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
                     }`}
@@ -157,11 +221,34 @@ export default function Header() {
                             </button>
                         </div>
 
+                        {/* Language Selector in Drawer */}
+                        <div className="mb-6 flex items-center justify-between bg-zinc-900 p-3 rounded-lg border border-zinc-800">
+                            <span className="text-xs font-semibold text-zinc-400 uppercase tracking-wider">Language</span>
+                            <div className="flex items-center gap-1 bg-black p-1 rounded-full border border-zinc-700 text-xs font-bold font-mono">
+                                <button
+                                    onClick={() => handleLanguageChange('de')}
+                                    className={`px-3 py-1 rounded-full transition-all ${
+                                        language === 'de' ? 'bg-red-600 text-white' : 'text-zinc-400 hover:text-white'
+                                    }`}
+                                >
+                                    DE
+                                </button>
+                                <button
+                                    onClick={() => handleLanguageChange('en')}
+                                    className={`px-3 py-1 rounded-full transition-all ${
+                                        language === 'en' ? 'bg-red-600 text-white' : 'text-zinc-400 hover:text-white'
+                                    }`}
+                                >
+                                    EN
+                                </button>
+                            </div>
+                        </div>
+
                         {/* Drawer Navigation Links */}
                         <nav className="flex flex-col space-y-2">
                             {navLinks.map((link) => (
                                 <NavLink
-                                    key={link.name}
+                                    key={link.path}
                                     to={link.path}
                                     onClick={toggleSidebar}
                                     className={({ isActive }) =>
