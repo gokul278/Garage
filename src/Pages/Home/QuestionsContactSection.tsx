@@ -24,7 +24,7 @@ export default function QuestionsContactSection() {
                         {/* Phone Number */}
                         <div>
                             <a
-                                href="tel:0443119689"
+                                href="tel:+41797669960"
                                 className="text-red-600 font-bold text-3xl sm:text-4xl lg:text-5xl tracking-wide hover:text-red-700 transition-colors inline-block"
                             >
                                 {t('questions.phone')}

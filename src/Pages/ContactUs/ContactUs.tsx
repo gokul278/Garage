@@ -207,10 +207,10 @@ export default function ContactUs() {
                         {/* Red Phone Number */}
                         <div>
                             <a
-                                href="tel:0443119689"
+                                href="tel:+41797669960"
                                 className="text-red-600 font-normal text-3xl sm:text-4xl lg:text-5xl tracking-wide hover:text-red-700 transition-colors inline-block"
                             >
-                                044 311 96 89
+                                +41 79 766 99 60
                             </a>
                         </div>
 

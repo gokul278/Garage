@@ -16,9 +16,20 @@ export default function Footer() {
                         <h3 className="text-white font-bold text-2xl lg:text-[1.6rem] tracking-tight mb-4">
                             {t('footer.addressTitle')}
                         </h3>
+                        
                         <div className="text-zinc-300 text-base leading-relaxed space-y-1 font-medium">
                             <p className="font-semibold text-white">{t('footer.companyName')}</p>
-                            <p>{t('footer.companySub')}</p>
+                            <p>
+                                <a
+                                    href="https://www.zuericar.com"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-white hover:text-red-500 transition-colors"
+                                >
+                                    www.zuericar.com
+                                </a>
+                            </p>
+                            {/* <p>{t('footer.companySub')}</p> */}
                             <p>{t('footer.addressStreet')}</p>
                             <p className="font-semibold text-white">{t('footer.addressCity')}</p>
                         </div>
@@ -64,21 +75,21 @@ export default function Footer() {
                                 </a>
                             </p>
                             <p>
-                                <span className="text-zinc-400">Tel.</span>{' '}
-                                <a href="tel:0443119689" className="font-semibold text-white hover:text-red-500 transition-colors">
-                                    044 311 96 89
+                                <span className="text-zinc-400">Mob.</span>{' '}
+                                <a href="tel:+41797669960" className="font-semibold text-white hover:text-red-500 transition-colors">
+                                    +41 79 766 99 60
                                 </a>
                             </p>
                             <p>
                                 <span className="text-zinc-400">Mob.</span>{' '}
-                                <a href="tel:0763181575" className="font-semibold text-white hover:text-red-500 transition-colors">
-                                    076 318 15 75
+                                <a href="tel:+41432999960" className="font-semibold text-white hover:text-red-500 transition-colors">
+                                    +41 43 299 99 60
                                 </a>
                             </p>
-                            <p>
+                            {/* <p>
                                 <span className="text-zinc-400">Fax</span>{' '}
                                 <span className="font-semibold text-white">044 311 96 77</span>
-                            </p>
+                            </p> */}
                         </div>
                     </div>
 

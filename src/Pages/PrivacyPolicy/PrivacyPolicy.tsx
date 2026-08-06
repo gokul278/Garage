@@ -74,7 +74,7 @@ export default function PrivacyPolicy() {
                                     info@doityourselfgarage.ch
                                 </a>
                             </p>
-                            <p>Tel. 044 311 96 89</p>
+                            <p>Tel. +41 79 766 99 60</p>
                             <p>Fax 044 311 96 77</p>
                         </div>
 
@@ -158,7 +158,7 @@ export default function PrivacyPolicy() {
                                     info@doityourselfgarage.ch
                                 </a>
                             </p>
-                            <p>Tel. 044 311 96 89</p>
+                            <p>Tel. +41 79 766 99 60</p>
                             <p>Fax 044 311 96 77</p>
                         </div>
                     </div>

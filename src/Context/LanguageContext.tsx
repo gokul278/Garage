@@ -22,8 +22,8 @@ const translations: Record<Language, Record<string, string>> = {
         'footer.addressTitle': 'Adresse',
         'footer.companyName': 'Do-it-yourself Garage',
         'footer.companySub': 'Santoro & Wiederkehr AG',
-        'footer.addressStreet': 'Schaffhauserstrasse 382',
-        'footer.addressCity': 'CH-8050 Zürich',
+        'footer.addressStreet': 'Kaiserstuhlstrasse 79',
+        'footer.addressCity': 'CH-8154 Oberglatt',
         'footer.hoursTitle': 'Öffnungszeiten',
         'footer.monFri': 'Montag – Freitag:',
         'footer.sat': 'Samstag:',
@@ -59,7 +59,7 @@ const translations: Record<Language, Record<string, string>> = {
         'home.introHeadlineRed': 'professionelle Equipment.',
         'home.introP1': 'Du hast ein altes Auto. Ein richtig altes. Einen Oldtimer. Oder ein neues. Egal. Fakt ist: Du magst dein Auto so sehr, dass du niemanden daran lassen willst. Und mit niemandem meinst du: niemanden ausser dich selbst.',
         'home.introP2': 'Wir können dich gut verstehen. Denn wir verstehen Autos. Genau darum haben wir von der Santoro & Wiederkehr AG die Do-it-yourself Garage ins Leben gerufen. Hier kannst du alles selber machen: Dein Auto bis zur letzten Einspritzdüse auseinandernehmen, Pneus wechseln, Bremsen kontrollieren, Klima-Service machen, Abgastest machen, für die MFK bereitstellen ... Kurz: Du kannst mit deinem Liebling auf vier Rädern tun, was dir gerade in den Sinn kommt. Es ist dein Auto. Und natürlich deine Verantwortung, dass nach getaner Arbeit auch wirklich alles gesetzskonform* funktioniert. Aber keine Sorge: Wenn du Unterstützung brauchst, sind wir da. Sag uns einfach Bescheid, und wir schauen dir beim Selbermachen über die Schulter.',
-        
+
         // Implementation Section
         'impl.subtitle': 'Umsetzung',
         'impl.headlinePart1': 'Komm vorbei und mache dein Auto zum ',
@@ -70,7 +70,7 @@ const translations: Record<Language, Record<string, string>> = {
         // Questions Contact Section
         'questions.subtitle': 'Nur keine Hemmungen',
         'questions.headline': 'Hast du Fragen? Wir kennen die Antworten.',
-        'questions.phone': '044 311 96 89',
+        'questions.phone': '+41 79 766 99 60',
 
         // Do It Yourself Page
         'diy.subtitle': 'Du kannst es. Ganz alleine. Do it yourself.',
@@ -244,8 +244,8 @@ const translations: Record<Language, Record<string, string>> = {
         'footer.addressTitle': 'Address',
         'footer.companyName': 'Do-it-yourself garage',
         'footer.companySub': 'Santoro & Wiederkehr AG',
-        'footer.addressStreet': 'Schaffhauserstrasse 382',
-        'footer.addressCity': 'CH-8050 Zurich',
+        'footer.addressStreet': 'Kaiserstuhlstrasse 79',
+        'footer.addressCity': 'CH-8154 Oberglatt',
         'footer.hoursTitle': 'Opening hours',
         'footer.monFri': 'Monday – Friday:',
         'footer.sat': 'Saturday:',
@@ -292,7 +292,7 @@ const translations: Record<Language, Record<string, string>> = {
         // Questions Contact Section
         'questions.subtitle': 'Just no inhibitions',
         'questions.headline': 'Do you have any questions? We know the answers.',
-        'questions.phone': '044 311 96 89',
+        'questions.phone': '+41 79 766 99 60',
 
         // Do It Yourself Page
         'diy.subtitle': 'You can do it. All by yourself. Do it yourself.',
